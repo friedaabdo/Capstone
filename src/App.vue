@@ -2,16 +2,17 @@
   <div>
     <h1>Welcome to Panion</h1>
     <h3>The only companion app you'll need while travelling</h3>
-    <translate-section />
-    <Attractions />
+    <router-view></router-view>
+    <!-- <translate-section />
+    <Attractions /> -->
   </div>
 </template>
 
 <script>
-import Attractions from './components/Attractions.vue';
+// import Attractions from './components/Attractions.vue';
 
 export default {
-  components: { Attractions },
+  // components: { Attractions },
   name: "App",
   
 };
