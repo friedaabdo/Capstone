@@ -1,17 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Welcome to Panion</h1>
+    <h3>The only companion app you'll need while travelling</h3>
+    <translate-section />
+    <Attractions />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Attractions from './components/Attractions.vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { Attractions },
+  name: "App",
+  
+};
 </script>
 
 <style>
