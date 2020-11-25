@@ -7,13 +7,11 @@ import About from "../views/About.vue";
 const routes = [
   {
     path: "/",
-    name: "Home",
     component: Home,
   },
   {
     path: "/about",
-    name: "About",
-    component: About
+    component: About,
   },
   { path: "/translate", component: Translate },
   { path: "/attractions", component: Attractions },
