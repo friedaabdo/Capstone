@@ -3,10 +3,15 @@ import Home from "../views/Home.vue";
 import Translate from "../components/Translate.vue";
 import Attractions from "../components/Attractions.vue";
 import About from "../views/About.vue";
+import Startup from '../components/Startup.vue'
 
 const routes = [
   {
     path: "/",
+    component: Startup,
+  },
+  {
+    path: "/home",
     component: Home,
   },
   {
@@ -14,7 +19,7 @@ const routes = [
     component: About,
   },
   { path: "/translate", component: Translate },
-  { path: "/attractions", component: Attractions },
+  { path: "/attractions", component: Attractions, },
 ];
 
 const router = createRouter({

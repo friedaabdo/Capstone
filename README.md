@@ -18,7 +18,6 @@ Panion is a travel buddy app where everything you could need while travelling is
 
 ### MVP
 
-- User can sign in
 - User can translate words and phrases
 - User can save translated items to be able to study them via flashcards
 - User can find attractions and activities in their location
@@ -26,6 +25,7 @@ Panion is a travel buddy app where everything you could need while travelling is
 
 ### POST MVP
 
+- User can sign in
 - add weather
 - add currency exchange
 - add budget tracker
@@ -74,15 +74,15 @@ Controller - "/pois"
 | Learn Vue                  | H        | 15                 | 20          |
 | Figure out Translate API   | H        | 10                 | 15          |
 | Figure out Attractions API | H        | 5                  | 10          |
-| Authentication             | M        | 6                  |             |
 | Create Tables/scaffolds    | H        | 3                  |             |
 | Connect back to front      | H        | 2                  |             |
 | Test all APIs              | H        | 6                  |             |
 | Figure out Flashcard logic | H        | 7                  |             |
-| Switch/Link/Routes         | H        | 2                  |             |
+| Switch/Link/Routes         | H        | 2                  |  3           |
 | Styling                    | M        | 8                  |             |
-| Flashcard animation        | L        | 5                  |             |
 | Mobile/Tablet/Desktop      | M        | 4                  |             |
+| Flashcard animation        | L        | 5                  |             |
+| Authentication             | L        | 6                  |             |
 |                            |          | Total Time: 69 hrs | Total Time: |
 
 ## ISSUES & RESOLUTIONS

@@ -1,12 +1,40 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/translate">Translate</router-link> |
-    <router-link to="/attractions">Attractions</router-link>
+  <div>
+    <div id="nav">
+      <router-link to="/home">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/translate">Translate</router-link> |
+      <router-link to="/attractions">Attractions</router-link>
+    </div>
+    <router-view @select-city="propsFromCity" :city-props='cityProps' :props-test='this.propsTest'/>
+    <!-- <Startup  /> -->
   </div>
-  <router-view/>
 </template>
+
+<script>
+// import Startup from "./components/Startup.vue";
+export default {
+  // components: [Startup],
+
+  data() {
+    return {
+      cityProps: {},
+      propsTest: 'test, test'
+    };
+  },
+  methods: {
+    propsFromCity(cityData) {
+      console.log('this is cityData', cityData)
+        const dataObj = cityData;
+        let results = {};
+        results = Object.assign(results, dataObj);
+        console.log(results)
+      this.cityProps = Object.assign(this.cityProps, results)
+      console.log('this is city props', this.cityProps)
+    },
+  },
+};
+</script>
 
 <style>
 #app {
