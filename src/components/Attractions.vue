@@ -2,7 +2,9 @@
   <div>
     <h1>Attractions</h1>
     <!-- <button @click="test">test</button> -->
-    <div class="filter">
+    <i @click='filter=true' v-if='!filter' class="fas fa-filter"></i>
+    <div @click='filter=false' v-else class="filter">
+      <i class="fas fa-times"></i>
       <form @submit.prevent="loadAttr">
         <p>Radius:</p>
         <input placeholder="km" type="number" v-model="radius" /><br />
@@ -59,6 +61,7 @@ export default {
       attractionsArray: null,
       radius: null,
       categories: [],
+    filter: false,
     };
   },
   methods: {
@@ -126,6 +129,5 @@ export default {
   margin: 2px;
   font-size: 12px;
 }
-section {
-}
+
 </style>

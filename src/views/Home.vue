@@ -11,6 +11,21 @@
 
 
 export default {
-  props:{cityProps:Object}
+  props:{cityProps:Object},
+  data() {
+    return {
+    }
+  },
+  methods: {
+    async weather() {
+      const api = process.env.VUE_APP_WEATHER
+      await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${this.cityProps.lat}&lon=${this.cityProps.long}&exclude=minutely,hourly,alerts&units=imperial&appid=${api}`)
+      .then(res => res.json())
+      .then(data => console.log(data))
+    }
+  },
+  mounted() {
+    this.weather()
+  }
 }
 </script>

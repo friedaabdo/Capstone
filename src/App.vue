@@ -4,7 +4,8 @@
       <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/translate">Translate</router-link> |
-      <router-link to="/attractions">Attractions</router-link>
+      <router-link to="/attractions">Attractions</router-link> |
+      <router-link to="/flashcards">Flashcards</router-link>
     </div>
     <router-view @select-city="propsFromCity" :city-props='cityProps' :props-test='this.propsTest'/>
     <!-- <Startup  /> -->
