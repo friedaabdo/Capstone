@@ -71,7 +71,7 @@ export default {
   font-family: "Homemade Apple", cursive;
 }
 .weather {
-  /* background-color: blue; */
+ margin-bottom: 150px;
 }
 #temp {
   font-size: 30px;

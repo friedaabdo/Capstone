@@ -1,6 +1,7 @@
 <template>
   <div class='startup'>
     <h1>What city will you be visiting?</h1>
+    <br>
     <h3 @click="clickCity(0)">Barcelona</h3>
     <h3 @click="clickCity(1)">Paris</h3>
     <h3 @click="clickCity(2)">Berlin</h3>
@@ -67,6 +68,7 @@ export default {
 
 .startup{
   padding: 0 10%;
+  margin-bottom: 150px;
 }
 
 h3 {

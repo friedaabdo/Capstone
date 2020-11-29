@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div class='attractions'>
     <h1>Attractions</h1>
-    <!-- <button @click="test">test</button> -->
     <i @click='filter=true' v-if='!filter' class="fas fa-filter"></i>
     <div @click='filter=false' v-else class="filter">
       <i class="fas fa-times"></i>
@@ -81,7 +80,9 @@ export default {
           this.access_token = data.access_token;
         });
 
-      let url = `https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=${this.cityProps.lat}&longitude=${this.cityProps.long}&radius=${!this.radius ? 1 : this.radius}&page%5Blimit%5D=10&page%5Boffset%5D=0&categories=${this.categories.join()}`;
+      // let url = `https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=${this.cityProps.lat}&longitude=${this.cityProps.long}&radius=${!this.radius ? 1 : this.radius}&page%5Blimit%5D=10&page%5Boffset%5D=0&categories=${this.categories.join()}`;
+
+      let url = `https://test.api.amadeus.com/v1/reference-data/locations/pois?latitude=48.8566&longitude=2.3522&radius=${!this.radius ? 1 : this.radius}&page%5Blimit%5D=10&page%5Boffset%5D=0&categories=${this.categories.join()}`;
       //   url += "?latitude=48.8566;
       //   url += "&longitude=2.3522";
       await fetch(url, {
@@ -128,6 +129,9 @@ export default {
   padding: 0 5px;
   margin: 2px;
   font-size: 12px;
+}
+.attractions {
+  margin-bottom: 150px;
 }
 
 </style>
