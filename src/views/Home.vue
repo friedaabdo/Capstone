@@ -1,31 +1,82 @@
 <template>
   <div class="home">
-    <h1>Welcome to Panion</h1>
-    <h3>The only companion app you'll need while travelling</h3>
-    <h3>It's going to be a wonderful day in {{cityProps.city}}!</h3>
+    <h1>
+      Make it <br />
+      wonderful in <br /><span class="cityName">{{ cityProps.city }}</span> !
+    </h1>
+    <div class="weather">
+      <p>
+        It is now
+        <span id="temp">{{ Math.round(main.temp) }}&deg;</span> in
+        {{ cityProps.city }}
+      </p>
+      <img src="" ref="icon" alt="weather icon" />
+      <p>{{ main.description }}</p>
+      <p>
+        H: {{ Math.round(main.temp_max) }}&deg; L:
+        {{ Math.round(main.temp_min) }}&deg;
+      </p>
+      <p>Feels like {{ Math.round(main.feels_like) }}&deg;</p>
+      <p>Humidity is {{ Math.round(main.humidity) }}%</p>
+      <!-- <p>{{main}}</p> -->
+    </div>
   </div>
-
 </template>
 
 <script>
-
-
 export default {
-  props:{cityProps:Object},
+  props: { cityProps: Object },
+  refs: [],
   data() {
     return {
-    }
+      main: {},
+    };
   },
   methods: {
-    async weather() {
-      const api = process.env.VUE_APP_WEATHER
-      await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${this.cityProps.lat}&lon=${this.cityProps.long}&exclude=minutely,hourly,alerts&units=imperial&appid=${api}`)
-      .then(res => res.json())
-      .then(data => console.log(data))
-    }
+    async weatherApi() {
+      const api = process.env.VUE_APP_WEATHER;
+      await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${this.cityProps.lat}&lon=${this.cityProps.long}&units=imperial&appid=${api}`
+        // `https://api.openweathermap.org/data/2.5/weather?lat=40.7128&lon=-74.006&&units=imperial&appid=${api}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("data", data);
+          // this.main = data.main
+          // this.main = data.weather[0]
+          let mainData = data.main;
+          let weather = data.weather[0];
+          let results = {};
+          results = Object.assign(results, mainData);
+          results = Object.assign(results, weather);
+          this.main = Object.assign(this.main, results);
+        });
+    },
+    weatherIcon() {
+      this.$refs.icon.src = `http://openweathermap.org/img/wn/${this.main.icon}@2x.png`;
+    },
   },
-  mounted() {
-    this.weather()
-  }
-}
+  async created() {
+    await this.weatherApi();
+    console.log("this is main", this.main);
+    console.log("this is main.something", this.main.temp);
+    this.weatherIcon();
+  },
+};
 </script>
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+
+.cityName {
+  font-family: "Homemade Apple", cursive;
+}
+.weather {
+  /* background-color: blue; */
+}
+#temp {
+  font-size: 30px;
+}
+.home {
+  padding: 0 20%;
+}
+</style>

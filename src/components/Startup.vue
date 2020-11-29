@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='startup'>
     <h1>What city will you be visiting?</h1>
     <h3 @click="clickCity(0)">Barcelona</h3>
     <h3 @click="clickCity(1)">Paris</h3>
@@ -62,3 +62,24 @@ export default {
   },
 };
 </script>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.startup{
+  padding: 0 10%;
+}
+
+h3 {
+  background: #ffe66d;
+  border-radius: 50px;
+  font-family: 'Playfair Display', serif;
+  width: 250px;
+  margin: 20px auto;
+}
+</style>
+<style >
+h1 {
+  font-family: 'Playfair Display', serif;
+
+}
+</style>

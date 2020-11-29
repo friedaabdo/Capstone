@@ -1,21 +1,23 @@
 <template>
-  <div>
-    <p>Translate your text here</p>
+  <div class='translate'>
+    <h1>Translate your text here</h1>
     <form @submit.prevent="translate">
+      <div class='transBar'>
       <input
         type="text"
         placeholder="what you wanna translate"
         v-model="input"
       />
-      <button>Translate</button>
+      <button>Translate</button></div>
     </form>
-
-    <div v-for="(item, ind) in history" :key="item.input">
-      <p v-if="this.history.length > 0">
-        {{ item.input }} <span><i class="fas fa-globe"></i></span>
-        {{ item.output }}
-      </p>
-      <button @click="addTranslation(ind)">Save</button>
+    <div class="history">
+      <div v-for="(item, ind) in history" :key="item.input" class="word">
+        <p v-if="this.history.length > 0">
+          {{ item.input }} <span><i class="fas fa-globe"></i></span>
+          {{ item.output }}
+        </p>
+        <button @click="addTranslation(ind)">Save</button>
+      </div>
     </div>
   </div>
 </template>
@@ -61,23 +63,60 @@ export default {
             error
           );
         });
-        console.log('the array history', this.history)
+      console.log("the array history", this.history);
     },
     addTranslation(index) {
-      fetch(url + '/flashcards', {
-        method: 'POST',
+      fetch(url + "/flashcards", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           original: this.history[index].input,
-          translated: this.history[index].output
-        })
-      })
-      console.log('i click save',this.history[index].input,this.history[index].output)
+          translated: this.history[index].output,
+        }),
+      });
+      console.log(
+        "i click save",
+        this.history[index].input,
+        this.history[index].output
+      );
     },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.translate {
+  margin-top: 75px
+}
+input {
+  border-radius: 50px 0 0 50px;
+  padding: 3px 10px; 
+  font-size: 20px;
+  border: none;
+  background-color: #F7A1A1;
+outline: none;
+}
+::placeholder {
+  color: #f7fff7;
+}
+form {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transBar {
+
+}
+button {
+  font-size: 20px;
+  border-radius: 0 50px 50px 0;
+    padding: 3px 10px; 
+    background-color: #f05d5e;
+    border: none;
+      color: #f7fff7;
+}
+
+</style>
