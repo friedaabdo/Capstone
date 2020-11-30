@@ -37,13 +37,9 @@ export default {
       const api = process.env.VUE_APP_WEATHER;
       await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${this.cityProps.lat}&lon=${this.cityProps.long}&units=imperial&appid=${api}`
-        // `https://api.openweathermap.org/data/2.5/weather?lat=40.7128&lon=-74.006&&units=imperial&appid=${api}`
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log("data", data);
-          // this.main = data.main
-          // this.main = data.weather[0]
           let mainData = data.main;
           let weather = data.weather[0];
           let results = {};
@@ -58,8 +54,6 @@ export default {
   },
   async created() {
     await this.weatherApi();
-    console.log("this is main", this.main);
-    console.log("this is main.something", this.main.temp);
     this.weatherIcon();
   },
 };

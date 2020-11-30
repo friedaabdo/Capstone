@@ -29,29 +29,10 @@ export default {
   },
   methods: {
     propsFromCity(cityData) {
-      console.log("this is cityData", cityData);
       const dataObj = cityData;
       let results = {};
       results = Object.assign(results, dataObj);
-      console.log(results);
       this.cityProps = Object.assign(this.cityProps, results);
-      console.log("this is city props", this.cityProps);
-    },
-
-    flashcardsCall() {
-      fetch(this.url + "/flashcards", {
-        method: "GET",
-        //   mode: 'no-cors',
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("show me the data", data);
-          this.flashcardsArr = data;
-          console.log("array", this.flashcardsArr);
-        });
     },
   },
 };

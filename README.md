@@ -6,15 +6,7 @@ Panion is a travel buddy app where everything you could need while travelling is
 
 ### PROJECT LINKS
 
-[Backend]()
-
-### WIRE FRAME
-
-[Wire Frame](https://wireframepro.mockflow.com/view/M939316752bfaa091186ddd9d154b115d1603462373599#/page/257ef942b81d43aaad8abb3d7b5d5cb6)
-
-### ARCHITECTURE
-
-[Architecture](https://docs.google.com/drawings/d/1_CwUrQV9eqZGwslFzHCxl4eNz5BhPPd8lNYcYDlXYt0/edit)
+[Backend](https://github.com/friedaabdo/Panion-rails.git)
 
 ### MVP
 
@@ -39,7 +31,6 @@ Controller - "/flashcards"
 | Verb       | Route  | Action |
 | ---------- | ------ | ------ |
 | Get        | "/"    | Index  |
-| Get        | "/:id" | Show   |
 | Post       | "/"    | Create |
 | Delete One | "/:id" | Delete |
 
@@ -69,21 +60,21 @@ Controller - "/pois"
 
 ### TIME TABLE
 
-| Component                  | Priority | Estimated Time     | Actual Time |
-| -------------------------- | -------- | ------------------ | ----------- |
-| Learn Vue                  | H        | 15                 | 20          |
-| Figure out Translate API   | H        | 10                 | 15          |
-| Figure out Attractions API | H        | 5                  | 10          |
-| Create Tables/scaffolds    | H        | 3                  |             |
-| Connect back to front      | H        | 2                  |             |
-| Test all APIs              | H        | 6                  |             |
-| Figure out Flashcard logic | H        | 7                  |             |
-| Switch/Link/Routes         | H        | 2                  |  3           |
-| Styling                    | M        | 8                  |             |
-| Mobile/Tablet/Desktop      | M        | 4                  |             |
-| Flashcard animation        | L        | 5                  |             |
-| Authentication             | L        | 6                  |             |
-|                            |          | Total Time: 69 hrs | Total Time: |
+| Component                  | Priority | Estimated Time     | Actual Time    |
+| -------------------------- | -------- | ------------------ | -------------- |
+| Learn Vue                  | H        | 15                 | 20             |
+| Figure out Translate API   | H        | 10                 | 15             |
+| Figure out Attractions API | H        | 5                  | 10             |
+| Create Tables/scaffolds    | H        | 3                  | 2              |
+| Connect back to front      | H        | 2                  | 1              |
+| Test all APIs              | H        | 6                  | 5              |
+| Figure out Flashcard logic | H        | 7                  | 5              |
+| Switch/Link/Routes         | H        | 2                  | 3              |
+| Styling                    | M        | 8                  | 10             |
+| Mobile/Tablet/Desktop      | M        | 4                  | 1              |
+| Flashcard animation        | L        | 5                  |                |
+| Authentication             | L        | 6                  |                |
+|                            |          | Total Time: 69 hrs | Total Time: 73 |
 
 ## ISSUES & RESOLUTIONS
 
