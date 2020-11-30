@@ -5,7 +5,7 @@
       <div class='transBar'>
       <input
         type="text"
-        placeholder="what you wanna translate"
+        placeholder="words and phrases"
         v-model="input"
       />
       <button class='trans-button'>Translate</button></div>

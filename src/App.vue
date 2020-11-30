@@ -8,24 +8,23 @@
       <router-link to="/attractions">Attractions</router-link> |
       <router-link to="/flashcards">Flashcards</router-link>
     </div>
-    <router-view
-      @select-city="propsFromCity"
-      :city-props="cityProps"
-      :flashcardsCall="flashcardsCall"
-      :url='url'
-    />
+    <div class="router-view">
+      <router-view
+        @select-city="propsFromCity"
+        :city-props="cityProps"
+        :flashcardsCall="flashcardsCall"
+        :url="url"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
- 
-
   data() {
     return {
       cityProps: {},
-      url: "http://localhost:3000"
+      url: "https://panion2020.herokuapp.com",
     };
   },
   methods: {
@@ -54,7 +53,6 @@ export default {
           console.log("array", this.flashcardsArr);
         });
     },
-
   },
 };
 </script>
@@ -78,6 +76,7 @@ body {
 #nav {
   padding: 30px 10px;
   background: #7e78d2;
+  max-width: 100vw;
 }
 
 #panion {
@@ -98,7 +97,13 @@ body {
 #nav a.router-link-exact-active {
   color: #d0e0f1;
 }
-p {
+p,
+button,
+input {
   font-family: "Raleway", sans-serif;
+}
+.router-view {
+  max-width: 800px;
+  margin: 0 auto;
 }
 </style>
